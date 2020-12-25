@@ -1,0 +1,24 @@
+problem:
+  shape:
+    name: System
+    dimensions: [ P, Q, R, S]
+    data-spaces:
+    - name: Weights
+      projection:
+      - [ [R] ]
+      - [ [S] ]
+    - name: Inputs
+      projection:
+      - [ [P], [R] ]
+      - [ [Q], [S] ]
+    - name: Outputs
+      projection:
+      - [ [P] ]
+      - [ [Q] ]
+      read-write: True
+
+  instance:
+    P: 256 
+    Q: 768
+    R: 256
+    S: 768 

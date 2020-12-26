@@ -1,22 +1,22 @@
 mapping:
   - target: MainMemory
     type: temporal
-    factors: S=1 R=1 Q=1 P=1
-    permutation: SRQP 
+    factors: S=1 P=1 R=1
+    permutation: SPR 
     
   - target: GlobalBuffer
     type: temporal
-    factors: S=768 R=1 Q=768 P=1 # (width x depth)/block size
-    permutation: SRQP
+    factors: S=768 P=1 R=1 # (width x depth)/block size
+    permutation: SPR
 
   - target: GlobalBuffer
     type: spatial
-    factors: S=1 R=1 Q=1 P=256 # number of PEs
-    permutation: SRQP
+    factors: S=1 P=256 R=1 # number of PEs and also global buffer space
+    permutation: SPR
     
   - target: RegisterFile
     type: temporal
-    factors: S=1 R=256 Q=1 P=1 # reg file x macs
-    permutation: SRQP 
+    factors: S=1 P=1 R=768 # reg file x macs
+    permutation: SPR 
     
 
